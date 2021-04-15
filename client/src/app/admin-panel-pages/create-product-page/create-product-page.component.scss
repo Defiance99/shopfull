@@ -1,0 +1,48 @@
+.product-params mat-form-field {
+    width:400px !important;
+  } 
+
+.cost-product p, .description-product p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px !important;
+}
+
+/* .create-product-button {
+    margin: 0 auto;
+    font-size: 18px !important;
+} */
+
+.create-button-wrapper {
+    margin-top: 10px;
+}
+
+.default-size-img {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-container {
+    width: 270px;
+    height: 270px;
+
+    img {
+        width: 270px;
+        height: 270px;
+        object-fit: cover;
+    }
+}
+
+.selectedImg {
+    display: flex;
+    flex-wrap: wrap;
+
+    .img {
+        width: 120px;
+        height: 120px;
+        object-fit: cover;
+        object-position: center;
+        margin: 0 5px;
+    }
+}

@@ -1,0 +1,138 @@
+.modal-window {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 30;
+    overflow: auto;
+    font-family: $cyntho-next-light;
+    background: rgba(0,0,0,.32);
+
+    .modal-window-field {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 19;
+    }
+
+    input[disabled] {
+        background: #f4a17bb3 !important;
+
+        &:hover {
+            background: #f4a17bb3 !important;
+        }
+    }
+
+    .modal-window-button-close {
+        position: absolute;
+        top: 5%;
+        left: 91%;
+        padding: 10px;
+        cursor: pointer;
+
+        &:hover {
+            
+            span {
+                border-left-color: black;
+            }
+        }
+
+        .left-side-close-button {
+            position: absolute;
+            width: 1px;
+            height: 20px;
+            border-left: 1px #ccc solid;
+
+            transform: rotate(45deg) translate(-8px, -6px);
+        }
+        .right-side-close-button {
+            position: absolute;
+            width: 1px;
+            height: 20px;
+            border-left: 1px #ccc solid;
+
+            transform: rotate(-45deg) translate(6px, -8px);
+        }
+    }
+
+    .review-modal-window-container {
+        position: relative;
+        top: 50%;
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 30px;
+        z-index: 20;
+        border-radius: 5px;
+        background: #FFF;
+        transform: translateY(-50%);
+
+        .review-modal-window-form {
+            background-color: #f5fbfb;
+
+            .review-title {
+                margin-bottom: 10px;
+                text-align: center;
+            }
+
+            .review-form {
+
+                .submit-review-form {
+                    margin-top: 15px;
+                }
+
+                .button-primary {
+                    padding: 12px 35px;
+                }
+
+                .element-review-form {
+                    display: flex;
+                    justify-content: center;
+                    padding: 15px;
+
+                    .left-side-review-form {
+                        display: flex;
+                        align-items: center;
+                        color: #2b3138;
+                        font-weight: 500;
+                    }
+
+                    .right-side-review-form {
+                        display: flex;
+                        justify-content: center;
+                        width: 100%;
+
+                        input {
+                            width: 100%;
+                            max-width: 350px;
+                            padding: 9px 15px;
+                            border: 1px #ccc solid;
+                            border-radius: 4px;
+                            outline: none;
+                        }
+
+                        textarea {
+                            max-width: 350px;
+                            width: 100%;
+                            padding: 15px;
+                            border: 1px #d2d1d1 solid;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.review-form {
+    max-width: 350px;
+    margin: 0 auto;
+
+    .mat-form-field {
+        width: 100%;  
+    }
+}

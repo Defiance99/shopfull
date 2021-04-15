@@ -1,0 +1,116 @@
+
+
+<section class="preview-product_Header">
+    <div class="preview-product-container">
+        <div class="preview-product">
+            <p class="title-text">Medium length display headline</p>
+            <p class="about-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum
+                laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar
+                sic tempor.</p>
+        </div>
+    </div>
+    <div class="transition-image"></div>
+</section>
+
+<section class="container">
+    <div class="section-header">
+        <div class="title section-header__title text-center">ОБЕДЫ</div>
+        <div class="subtitle text-center section-header__subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing
+            elit. Aenean
+            euismod bibendum
+            laoreet.
+        </div>
+        <div class="schedule-days" #scheduleDaysWrapper>
+            <p class="schedule-days__item" value="Понедельник">ПОНЕДЕЛЬНИК</p>
+            <p class="schedule-days__item" value="Вторник">ВТОРНИК</p>
+            <p class="schedule-days__item" value="Среда">СРЕДА</p>
+            <p class="schedule-days__item" value="Четверг">ЧЕТВЕРГ</p>
+            <p class="schedule-days__item" value="Пятница">ПЯТНИЦА</p>
+            <p class="schedule-days__item" value="Суббота">СУББОТА</p>
+            <p class="schedule-days__item" value="Воскресенье">ВОСКРЕСЕНЬЕ</p>
+        </div>
+    </div>
+
+    <div class="product-cards" *ngIf="products$ | async as products; else loader">
+        <ng-container *ngFor="let product of products; index as i">
+            <app-product-cart [product]=product></app-product-cart>
+        </ng-container>
+    </div>
+
+    <ng-template #loader>
+        <app-loader></app-loader>
+    </ng-template>
+
+</section>
+
+<section class="container">
+    <div class="section-header">
+        <div class="title section-header__title text-center">{{today | dayNow}}</div>
+        <div class="subtitle text-center section-header__subtitle">Lorem ipsum dolor sit amet consectetur adipisicing
+            elit. Exercitationem vero voluptas libero? Suscipit aliquid harum, praesentium, cum laudantium sapiente
+            odit, rem ad error dolorum commodi.
+        </div>
+        <div class="schedule-days" #menuItemsWrapper>
+            <p class="schedule-days__item" value="Десерт">ДЕСЕРТЫ</p>
+            <p class="schedule-days__item" value="Хлеб и выпечка">ХЛЕБ И ВЫПЕЧКА</p>
+            <p class="schedule-days__item" value="Соусы и намазки">СОУСЫ И НАМАЗКИ</p>
+            <p class="schedule-days__item" value="Напитки">НАПИТКИ</p>
+            <p class="schedule-days__item" value="Завтрак">ЗАВТРАКИ</p>
+        </div>
+    </div>
+
+    <div class="product-cards" *ngIf="menuProducts$ | async as products; else loader">
+        <ng-container *ngFor="let product of products; index as i">
+            <app-product-cart [product]=product></app-product-cart>
+        </ng-container>
+    </div>
+
+    <ng-template #loader>
+        <app-loader></app-loader>
+    </ng-template>
+
+</section>
+
+<section class="about-project">
+    <div class="about-project-container">
+        <div class="left-side-block">
+            <p class="header-text">О ПРОЕКТЕ</p>
+            <p class="about-project-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod
+                bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales
+                pulvinar sic tempor.</p>
+        </div>
+        <!-- <div class="right-side-block"> -->
+        <img src="/assets/images/about-project-img.png" alt="caffe image" class="right-side-image">
+        <!-- </div> -->
+    </div>
+</section>
+
+<section class="eco-products">
+    <div class="transition-image-top"></div>
+
+    <div class="eco-products-container">
+        <p class="title-text">ЭКО ПРОДУКТЫ ОТ «ШАНТИ ЛАВКА»</p>
+
+        <div class="product-cards" *ngIf="ecoProducts$ | async as products; else loader">
+            <ng-container *ngFor="let product of products; index as i">
+                <app-product-cart [product]=product></app-product-cart>
+            </ng-container>
+        </div>
+
+        <ng-template #loader>
+            <app-loader></app-loader>
+        </ng-template>
+    </div>
+
+    <a class="button-primary" routerLink="/catalog">ПОСМОТРЕТЬ ВСЕ</a>
+
+    <div class="transition-image-bottom"></div>
+
+    <!-- Review Block begin -->
+
+    <app-review></app-review>
+
+    <!-- Review Block Close -->
+    
+</section>
+
