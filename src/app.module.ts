@@ -21,11 +21,11 @@ import { join } from 'path';
 @Module({
   imports: [TypeOrmModule.forRoot({
       "type": "mysql",
-      "host": "127.0.0.1",
+      "host": "z29769w4.beget.tech", //127.0.0.1
       "port": 3306,
-      "username": "root",
-      "password": "root",
-      "database": "shopapi",
+      "username": "z29769w4_shop", //root
+      "password": "LXcc12az", //root
+      "database": "z29769w4_shop", //shopapi
       "synchronize": true,
       "entities": [Review, Product, User, Device, Order, OrderDetails]
   }),
@@ -51,3 +51,7 @@ export class AppModule implements NestModule {
         .forRoutes('*');
   }
 }
+function __dirname(__dirname: any, arg1: string, arg2: string) {
+  throw new Error('Function not implemented.');
+}
+
