@@ -51,7 +51,4 @@ export class AppModule implements NestModule {
         .forRoutes('*');
   }
 }
-function __dirname(__dirname: any, arg1: string, arg2: string) {
-  throw new Error('Function not implemented.');
-}
 
