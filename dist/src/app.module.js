@@ -49,7 +49,7 @@ AppModule = __decorate([
                 isGlobal: true
             }),
             serve_static_1.ServeStaticModule.forRoot({
-                rootPath: path_1.join(__dirname, '..', 'client/dist/client/assets'),
+                rootPath: path_1.join(__dirname, '..', 'client/dist/front-end/'),
             }),
             review_module_1.ReviewModule,
             product_module_1.ProductModule,
