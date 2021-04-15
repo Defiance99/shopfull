@@ -26,7 +26,6 @@ import { LoaderComponent } from './shared/components/loader/loader.component';
 import { ProductCartComponent } from './shared/components/product-cart/product-cart.component';
 import { ProductPageComponent } from './site-pages/product-page/product-page.component';
 import { ReviewsPageComponent } from './site-pages/reviews-page/reviews-page.component';
-import { ReviewRatingDirective } from './shared/directives/review-rating.directive';
 import { ReviewComponent } from './site-pages/home-page/review/review.component';
 import { RatingControlComponent } from './shared/components/review/rating-control/rating-control.component';
 import { FlowRatingComponent } from './shared/components/review/flow-rating/flow-rating.component';
@@ -60,7 +59,6 @@ import { DialogBoxAcceptComponent } from './site-pages/order-page/dialog-box-acc
     ProductCartComponent,
     ProductPageComponent,
     ReviewsPageComponent,
-    ReviewRatingDirective,
     ReviewComponent,
     RatingControlComponent,
     FlowRatingComponent,
