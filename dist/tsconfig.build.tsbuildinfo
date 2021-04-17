@@ -4152,7 +4152,7 @@
         "affectsGlobalScope": false
       },
       "../src/app.module.ts": {
-        "version": "1e0ab4444b5801c2a90d6d19f8bf6433edcef6c896025e0f3a5c265beacbe6a9",
+        "version": "e0a4e8aaa3226fdb2ff429c556e137ce38e3f42af6d04426613b0593b2ffc298",
         "signature": "9f78b3626b7b799cfce54f8a459a432584054fe4fe823f7a21cc91fb950c4c10",
         "affectsGlobalScope": false
       },

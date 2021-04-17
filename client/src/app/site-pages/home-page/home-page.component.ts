@@ -1,5 +1,6 @@
 import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { Observable } from 'rxjs';
+import SwiperCore, { Navigation, Swiper, SwiperOptions } from 'swiper/core';
 import { Product } from 'src/app/shared/interfaces';
 import { ProductService } from 'src/app/shared/services/product.service';
 declare const showModalMessage: any;
@@ -19,6 +20,25 @@ export class HomePageComponent implements OnInit, AfterViewInit, OnDestroy {
   products$: Observable<Product[]> | undefined;
   menuProducts$: Observable<Product[]> | undefined;
   ecoProducts$: Observable<Product[]> | undefined;
+  config: SwiperOptions = {
+    freeMode: true,
+    spaceBetween: 20,
+    slidesPerView: 2,
+    breakpoints: {
+      960: {
+        spaceBetween: 0,
+        slidesPerView: 7,
+      },
+      600: {
+        spaceBetween: 10,
+        slidesPerView: 4,
+      },
+      450: {
+        spaceBetween: 20,
+        slidesPerView: 3,
+      }
+    }
+  }
 
   constructor(
     private productService: ProductService,

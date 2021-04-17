@@ -21,20 +21,20 @@ import { join } from 'path';
 @Module({
   imports: [TypeOrmModule.forRoot({
       "type": "mysql",
-      "host": "z29769w4.beget.tech", //127.0.0.1
+      "host": "z29769w4.beget.tech", //localhost //z29769w4.beget.tech
       "port": 3306,
-      "username": "z29769w4_shop", //root
-      "password": "LXcc12az", //root
-      "database": "z29769w4_shop", //shopapi
+      "username": "z29769w4_shop", //root //z29769w4_shop
+      "password": "LXcc12az", //root //LXcc12az
+      "database": "z29769w4_shop", //shopapi //z29769w4_shop
       "synchronize": true,
       "entities": [Review, Product, User, Device, Order, OrderDetails]
   }),
   ConfigModule.forRoot({
     isGlobal: true
   }),
-  ServeStaticModule.forRoot({
+ /*  ServeStaticModule.forRoot({
     rootPath: join(__dirname, '..', 'client'), //join(__dirname, '..', '..', 'client/dist/front-end/')
-  }),
+  }), */
   ReviewModule,
   ProductModule,
   UsersModule,

@@ -52,6 +52,7 @@ export class LoginPageComponent implements OnInit, OnDestroy {
     this.authSub = this.authService.login(this.signInForm.value).subscribe(
       () =>  {
         this.router.navigate(['/admin-panel']);
+        showModalMessage('Вы вошли');
       },
       err => {
         this.signInForm.enable();

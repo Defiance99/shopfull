@@ -20,7 +20,7 @@
             euismod bibendum
             laoreet.
         </div>
-        <div class="schedule-days" #scheduleDaysWrapper>
+        <!-- <div class="schedule-days" #scheduleDaysWrapper>
             <p class="schedule-days__item" value="Понедельник">ПОНЕДЕЛЬНИК</p>
             <p class="schedule-days__item" value="Вторник">ВТОРНИК</p>
             <p class="schedule-days__item" value="Среда">СРЕДА</p>
@@ -28,7 +28,34 @@
             <p class="schedule-days__item" value="Пятница">ПЯТНИЦА</p>
             <p class="schedule-days__item" value="Суббота">СУББОТА</p>
             <p class="schedule-days__item" value="Воскресенье">ВОСКРЕСЕНЬЕ</p>
+        </div> -->
+
+        <div class="schedule-days" #scheduleDaysWrapper>
+            <swiper [config]="config">
+                <ng-template swiperSlide>
+                    <p class="schedule-days__item" value="Понедельник">ПОНЕДЕЛЬНИК</p>
+                </ng-template>
+                <ng-template swiperSlide>
+                    <p class="schedule-days__item" value="Вторник">ВТОРНИК</p>
+                </ng-template>
+                <ng-template swiperSlide>
+                    <p class="schedule-days__item" value="Среда">СРЕДА</p>
+                </ng-template>
+                <ng-template swiperSlide>
+                    <p class="schedule-days__item" value="Четверг">ЧЕТВЕРГ</p>
+                </ng-template>
+                <ng-template swiperSlide>
+                    <p class="schedule-days__item" value="Пятница">ПЯТНИЦА</p>
+                </ng-template>
+                <ng-template swiperSlide>
+                    <p class="schedule-days__item" value="Суббота">СУББОТА</p>
+                </ng-template>
+                <ng-template swiperSlide>
+                    <p class="schedule-days__item" value="Воскресенье">ВОСКРЕСЕНЬЕ</p>
+                </ng-template>
+            </swiper>
         </div>
+
     </div>
 
     <div class="product-cards" *ngIf="products$ | async as products; else loader">
