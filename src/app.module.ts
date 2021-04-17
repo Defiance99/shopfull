@@ -33,7 +33,7 @@ import { join } from 'path';
     isGlobal: true
   }),
   ServeStaticModule.forRoot({
-    rootPath: join(__dirname, '..', '..', '/client/dist/front-end/'),
+    rootPath: join(__dirname, '/..', '/..', 'Wlient/dist/front-end/'), //join(__dirname, '..', '..', 'client/dist/front-end/')
   }),
   ReviewModule,
   ProductModule,

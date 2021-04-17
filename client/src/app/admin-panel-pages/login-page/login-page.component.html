@@ -13,6 +13,7 @@
                         formControlName="login"
                         class="sign-auth-form__input"
                     >
+                    <mat-hint>test</mat-hint>
                 </mat-form-field>
                 <mat-form-field class="sign-auth-form__field sign-auth-form__field_last-child" appearance="outline">
                     <mat-label>Пароль</mat-label>
@@ -23,12 +24,13 @@
                     >
                 </mat-form-field>
                 <div class="sign-auth-form__submit-wrapper">
-                    <div
+                    <div 
                         (click)="onSubmit()"
-                        class="sign-auth-form__submit-trigger"
+                        class="sign-auth-form__submit-trigger" 
+                        [ngClass]="{'valid-auth-form': signInForm.valid }"
                     >
+                        <div class="sign-auth-form__submit_triangle"></div>
                     </div>
-                    <input type="submit" class="sign-auth-form__submit" #submitFormButton>
                 </div>
                 <div class="sign-auth-form__hint-wrapper">
                     <p class="sign-auth-form__hint">Нет аккаунта? <a routerLink="/admin-panel/sign-up">Зарегистрироваться</a></p>
