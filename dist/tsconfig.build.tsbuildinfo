@@ -4157,7 +4157,7 @@
         "affectsGlobalScope": false
       },
       "../src/main.ts": {
-        "version": "201bce2d748d1fce8e83d02591199599d21ad910bc96b686759144761727c5a6",
+        "version": "bfd4c8e7f677b727ef63cd4055a3b352c62072df6a2fa206a52c2a5197112ea8",
         "signature": "f761c91419d0a89422a0004ef1a92929dd4d2d5e5c16758654d8b0467d1998c6",
         "affectsGlobalScope": false
       },
@@ -7702,7 +7702,6 @@
       "../src/main.ts": [
         "../node_modules/@nestjs/core/index.d.ts",
         "../node_modules/@types/express/index.d.ts",
-        "../node_modules/@types/node/path.d.ts",
         "../src/app.module.ts"
       ],
       "../src/middleware/body-json.middleware.ts": [
