@@ -19,7 +19,7 @@ export class ProductController {
     @UseGuards(JwtAuthGuard)
     @UseInterceptors(FilesInterceptor('images', 6, {
         storage: diskStorage({
-            destination: 'uploads/',
+            destination: './uploads',
             filename: editFileName,
             filefilter: imageFileFilter,
         }),
