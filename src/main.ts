@@ -12,7 +12,8 @@ async function bootstrap() {
   await app.init();
   app.enableCors();
   await app.listen(process.env.PORT || 3000);
-  app.use(express.static('../client/dist/front-end'));
+  /* app.use(express.static('/client/dist/front-end')); */
+
 
   console.log(`Application is running on: ${await app.getUrl()}`);
 }

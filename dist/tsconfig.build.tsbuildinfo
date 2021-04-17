@@ -4152,12 +4152,12 @@
         "affectsGlobalScope": false
       },
       "../src/app.module.ts": {
-        "version": "115c914faabd49718957e8a7a19ae0f84fd2c63cc2dc44b7bf360da59cd53fd0",
+        "version": "1e0ab4444b5801c2a90d6d19f8bf6433edcef6c896025e0f3a5c265beacbe6a9",
         "signature": "9f78b3626b7b799cfce54f8a459a432584054fe4fe823f7a21cc91fb950c4c10",
         "affectsGlobalScope": false
       },
       "../src/main.ts": {
-        "version": "49f516808a497b9001d2876279acc48fec53f0b44aeb03e17e1ecfd2891e41f6",
+        "version": "201bce2d748d1fce8e83d02591199599d21ad910bc96b686759144761727c5a6",
         "signature": "f761c91419d0a89422a0004ef1a92929dd4d2d5e5c16758654d8b0467d1998c6",
         "affectsGlobalScope": false
       },
