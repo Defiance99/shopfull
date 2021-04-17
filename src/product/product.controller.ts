@@ -54,7 +54,8 @@ export class ProductController {
 
     @Get('uploads/:imagename')
     async findImage(@Param('imagename') imagename: string, @Res() res) {
-        return res.sendFile(join(process.cwd(), 'uploads/' + imagename));
+        /* return res.sendFile(join(process.cwd(), 'uploads/' + imagename)); */
+        res.sendFile(imagename, { root: 'uploads'});
     }
 
     @Get('getById/:id')
