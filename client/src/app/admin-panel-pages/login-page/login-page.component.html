@@ -13,12 +13,11 @@
                         formControlName="login"
                         class="sign-auth-form__input"
                     >
-                    <!-- <div *ngIf="signInForm.get('login')?.invalid && signInForm.get('login')?.touched">
-                        <ng-template>
-                            <mat-hint class="hint__error_red" *ngIf="signInForm.get('login')?.errors?.required">Поле логин не должно быть пустым</mat-hint>
-                        </ng-template>
-                        
-                    </div> -->
+                    <!-- <ng-container *ngIf="signInForm.controls['login']">
+                        <div *ngIf="signInForm['login'] && signInForm.get('login').invalid && signInForm.get('login').touched">
+                            <mat-hint class="hint__error_red" *ngIf="signInForm.get('login').errors">Поле логин не должно быть пустым</mat-hint>
+                        </div>
+                    </ng-container> -->
 
                 </mat-form-field>
                 <mat-form-field class="sign-auth-form__field sign-auth-form__field_last-child" appearance="outline">
