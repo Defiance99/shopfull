@@ -1,6 +1,6 @@
 export const imageFileFilter = (req, file, cb) => {
     if (!file.originalname.match(/\.(jpg|jpeg|png|gif)$/)) {
-      return cb(new Error('Only image files are allowed!'), false);
+      return cb(new Error('Недопустимый формат изображения'), false);
     }
     cb(null, true);
   };

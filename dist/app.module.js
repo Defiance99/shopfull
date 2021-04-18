@@ -24,6 +24,8 @@ const user_device_entity_1 = require("./users/entity/user-device.entity");
 const order_entity_1 = require("./order/entity/order.entity");
 const order_details_entity_1 = require("./order/entity/order-details.entity");
 const order_module_1 = require("./order/order.module");
+const serve_static_1 = require("@nestjs/serve-static");
+const path_1 = require("path");
 let AppModule = class AppModule {
     configure(consumer) {
         consumer
@@ -45,6 +47,9 @@ AppModule = __decorate([
             }),
             config_1.ConfigModule.forRoot({
                 isGlobal: true
+            }),
+            serve_static_1.ServeStaticModule.forRoot({
+                rootPath: path_1.join(__dirname, '..', 'client/dist/front-end'),
             }),
             review_module_1.ReviewModule,
             product_module_1.ProductModule,

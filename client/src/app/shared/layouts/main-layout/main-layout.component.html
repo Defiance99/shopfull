@@ -62,7 +62,7 @@
             </div>
         </div>
         <div class="mobile-nav-menu">
-            <div class="first-level-menu list-menu-products">
+            <!-- <div class="first-level-menu list-menu-products">
                 <span class="first-level-menu-elem">МЕНЮ</span>
                 <ul class="second-level-menu">
                     <li>ЗАВТРАКИ</li>
@@ -72,16 +72,16 @@
                     <li>СОУСЫ И НАМАЗКИ</li>
                     <li>НАПИТКИ</li>
                 </ul>
-            </div>
+            </div> -->
             <div class="first-level-menu shop-list-products">
                 <span class="first-level-menu-elem shop-text-mark">МАГАЗИН</span>
                 <ul class="second-level-menu">
-                    <li>ЗАВТРАКИ</li>
-                    <li>ОБЕДЫ</li>
-                    <li>ДЕСЕРТЫ</li>
-                    <li>ХЛЕБ И ВЫПЕЧКА</li>
-                    <li>СОУСЫ И НАМАЗКИ</li>
-                    <li>НАПИТКИ</li>
+                    <li [routerLink]="['/catalog']" [queryParams]="{'category': 'Завтрак'}">ЗАВТРАКИ</li>
+                    <li [routerLink]="['/catalog']" [queryParams]="{'category': 'Обед'}">ОБЕДЫ</li>
+                    <li [routerLink]="['/catalog']" [queryParams]="{'category': 'Десерт'}">ДЕСЕРТЫ</li>
+                    <li [routerLink]="['/catalog']" [queryParams]="{'category': 'Хлеб и выпечка'}">ХЛЕБ И ВЫПЕЧКА</li>
+                    <li [routerLink]="['/catalog']" [queryParams]="{'category': 'Соусы и намазки'}">СОУСЫ И НАМАЗКИ</li>
+                    <li [routerLink]="['/catalog']" [queryParams]="{'category': 'Напитки'}">НАПИТКИ</li>
                 </ul>
             </div>
             <div>ПОДПИСКА</div>

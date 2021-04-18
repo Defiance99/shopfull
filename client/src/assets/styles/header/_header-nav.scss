@@ -333,6 +333,9 @@
             }
     
             .second-level-menu {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
                 visibility: hidden;
                 height: 0;
                 width: 100%;
@@ -343,6 +346,9 @@
                 transition: all 300ms ease;
     
                 li {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
                     width: 150px;
                     height: 19px; //19
                     padding: 10px 0px;

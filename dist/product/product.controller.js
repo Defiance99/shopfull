@@ -21,7 +21,6 @@ const product_service_1 = require("./product.service");
 const product_validation_pipe_1 = require("./pipes/product-validation.pipe");
 const file_upload_utils_1 = require("../utils/file-upload.utils");
 const jwt_auth_guard_1 = require("../auth/guards/jwt-auth.guard");
-const path_1 = require("path");
 let ProductController = class ProductController {
     constructor(productService) {
         this.productService = productService;
@@ -48,7 +47,7 @@ let ProductController = class ProductController {
         return this.productService.findByFilters(query.category, query.day);
     }
     async findImage(imagename, res) {
-        return res.sendFile(path_1.join(process.cwd(), 'uploads/' + imagename));
+        res.sendFile(imagename, { root: 'uploads' });
     }
     async getById(id) {
         return this.productService.findById(id);

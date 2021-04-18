@@ -32,9 +32,9 @@ import { join } from 'path';
   ConfigModule.forRoot({
     isGlobal: true
   }),
- /*  ServeStaticModule.forRoot({
-    rootPath: join(__dirname, '..', 'client'), //join(__dirname, '..', '..', 'client/dist/front-end/')
-  }), */
+  ServeStaticModule.forRoot({
+    rootPath: join(__dirname, '..', 'client/dist/front-end'), //join(__dirname, '..', '..', 'client/dist/front-end/')
+  }),
   ReviewModule,
   ProductModule,
   UsersModule,

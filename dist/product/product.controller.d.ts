@@ -7,6 +7,6 @@ export declare class ProductController {
     getAll(): Promise<import("./entity/product.entity").Product[]>;
     getProducts(query: any): Promise<import("./entity/product.entity").Product[]>;
     getByFilters(query: any): Promise<import("./entity/product.entity").Product[]>;
-    findImage(imagename: string, res: any): Promise<any>;
+    findImage(imagename: string, res: any): Promise<void>;
     getById(id: string): Promise<import("./entity/product.entity").Product>;
 }
