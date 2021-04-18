@@ -20,7 +20,7 @@ export class HomePageComponent implements OnInit, AfterViewInit, OnDestroy {
   products$: Observable<Product[]> | undefined;
   menuProducts$: Observable<Product[]> | undefined;
   ecoProducts$: Observable<Product[]> | undefined;
-  config: SwiperOptions = {
+  configDays: SwiperOptions = {
     freeMode: true,
     spaceBetween: 20,
     slidesPerView: 2,
@@ -28,6 +28,25 @@ export class HomePageComponent implements OnInit, AfterViewInit, OnDestroy {
       960: {
         spaceBetween: 0,
         slidesPerView: 7,
+      },
+      600: {
+        spaceBetween: 10,
+        slidesPerView: 4,
+      },
+      450: {
+        spaceBetween: 20,
+        slidesPerView: 3,
+      }
+    }
+  }
+  configMenus: SwiperOptions = {
+    freeMode: true,
+    spaceBetween: 20,
+    slidesPerView: 2,
+    breakpoints: {
+      960: {
+        spaceBetween: 0,
+        slidesPerView: 5,
       },
       600: {
         spaceBetween: 10,

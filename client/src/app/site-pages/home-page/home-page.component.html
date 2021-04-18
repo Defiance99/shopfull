@@ -31,7 +31,7 @@
         </div> -->
 
         <div class="schedule-days" #scheduleDaysWrapper>
-            <swiper [config]="config">
+            <swiper [config]="configDays">
                 <ng-template swiperSlide>
                     <p class="schedule-days__item" value="Понедельник">ПОНЕДЕЛЬНИК</p>
                 </ng-template>
@@ -77,12 +77,32 @@
             elit. Exercitationem vero voluptas libero? Suscipit aliquid harum, praesentium, cum laudantium sapiente
             odit, rem ad error dolorum commodi.
         </div>
-        <div class="schedule-days" #menuItemsWrapper>
+        <!-- <div class="schedule-days" #menuItemsWrapper>
             <p class="schedule-days__item" value="Десерт">ДЕСЕРТЫ</p>
             <p class="schedule-days__item" value="Хлеб и выпечка">ХЛЕБ И ВЫПЕЧКА</p>
             <p class="schedule-days__item" value="Соусы и намазки">СОУСЫ И НАМАЗКИ</p>
             <p class="schedule-days__item" value="Напитки">НАПИТКИ</p>
             <p class="schedule-days__item" value="Завтрак">ЗАВТРАКИ</p>
+        </div> -->
+
+        <div class="schedule-days" #menuItemsWrapper>
+            <swiper [config]="configMenus">
+                <ng-template swiperSlide>
+                    <p class="schedule-days__item" value="Десерт">ДЕСЕРТЫ</p>
+                </ng-template>
+                <ng-template swiperSlide>
+                    <p class="schedule-days__item" value="Хлеб и выпечка">ХЛЕБ И ВЫПЕЧКА</p>
+                </ng-template>
+                <ng-template swiperSlide>
+                    <p class="schedule-days__item" value="Соусы и намазки">СОУСЫ И НАМАЗКИ</p>
+                </ng-template>
+                <ng-template swiperSlide>
+                    <p class="schedule-days__item" value="Напитки">НАПИТКИ</p>
+                </ng-template>
+                <ng-template swiperSlide>
+                    <p class="schedule-days__item" value="Завтрак">ЗАВТРАКИ</p>
+                </ng-template>
+            </swiper>
         </div>
     </div>
 

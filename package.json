@@ -27,6 +27,7 @@
     "client": "npm run start --prefix client",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm run client-install && npm run build --prefix client"
   },
+  
   "dependencies": {
     "@nestjs/common": "^7.5.1",
     "@nestjs/config": "^0.6.2",
