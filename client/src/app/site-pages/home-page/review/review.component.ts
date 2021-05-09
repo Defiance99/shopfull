@@ -35,7 +35,7 @@ export class ReviewComponent implements OnInit, OnDestroy {
       prevEl: '.custom-left-arrow-container',
       nextEl: '.custom-right-arrow-container'
     },
-    spaceBetween: 20,
+    spaceBetween: 0,
     slidesPerView: 1,
   }
 

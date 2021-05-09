@@ -1,0 +1,67 @@
+<div class="chat" cdkDrag cdkDragBoundary="body">
+    <div class="chat__wrapper">
+        <div class="chat__header" cdkDragHandle>
+            <div class="button__wrapper" (click)="hiddenChat()">
+                <div class="hidden-button chat__hidden"></div>
+            </div>
+            <div class="button__wrapper" (click)="closeChat()">
+                <div class="close-button chat__close"></div>
+            </div>
+        </div>
+        <div class="chat__body">
+            <div class="text-center bt-gray">Количество пользователей: {{quanUsers}}</div>
+            <ng-container *ngIf="messages.length > 0; else empty">
+                <div class="chat__message" *ngFor="let message of messages">
+                    <div class="chat__username">
+                        {{message.author}}
+                    </div>
+                    <div class="d-flex align-center">
+                        <mat-icon matSuffix>sms</mat-icon>
+                        <div class="chat__message-text">{{message.message}}</div>
+                    </div>
+                </div>
+            </ng-container>
+
+            <ng-template #empty>
+                <div class="chat__empty text-center">Сообщений нет</div>
+            </ng-template>
+        </div>
+        <div class="chat__footer" *ngIf="isAuth || isName; else usernameInput">
+            <div class="chat__message-input">
+                <mat-form-field appearance="legacy">
+                    <input 
+                        matInput 
+                        placeholder="Введите ваше сообщение"
+                        [formControl]="message"
+                    >
+                    <mat-icon matSuffix>email</mat-icon>
+                </mat-form-field>
+            </div>
+            <button 
+                class="chat__submit button" 
+                [disabled]="message.invalid" 
+                (click)="sendMessage()"
+            >
+            Отправить</button>
+        </div>
+        <ng-template #usernameInput>
+            <div class="chat__footer">
+                <div class="chat__message-input">
+                    <mat-form-field appearance="legacy">
+                        <input 
+                            matInput 
+                            placeholder="Введите ваше имя"
+                            [formControl]="username"
+                        >
+                        <mat-icon matSuffix>account_circle</mat-icon>
+                    </mat-form-field>
+                </div>
+                <button 
+                    class="chat__submit button" 
+                    (click)="setName()"
+                    [disabled]="username.invalid"
+                >Сохранить</button>
+            </div>
+        </ng-template>
+    </div>
+</div>

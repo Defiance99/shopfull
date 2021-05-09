@@ -2,7 +2,7 @@
     <div *ngFor="let star of stars; let i= index" class="d-flex">
         <img 
             class="review-form__rating-img" 
-            (click)="countStar(star)" 
+            (click)="setRating(star)" 
             id="{{'starId'+i}}" 
             [ngClass]="{'review-form__rating-img_hovered': (star <= rating)}" 
             (mouseover)="addClass(star)" 

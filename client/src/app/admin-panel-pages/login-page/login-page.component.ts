@@ -56,6 +56,7 @@ export class LoginPageComponent implements OnInit, OnDestroy {
       },
       err => {
         this.signInForm.enable();
+        showModalMessage(err.error.message);
       }
     );
   }

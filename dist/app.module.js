@@ -26,6 +26,7 @@ const order_details_entity_1 = require("./order/entity/order-details.entity");
 const order_module_1 = require("./order/order.module");
 const serve_static_1 = require("@nestjs/serve-static");
 const path_1 = require("path");
+const chat_module_1 = require("./chat/chat.module");
 let AppModule = class AppModule {
     configure(consumer) {
         consumer
@@ -39,9 +40,9 @@ AppModule = __decorate([
                 "type": "mysql",
                 "host": "z29769w4.beget.tech",
                 "port": 3306,
-                "username": "z29769w4_shop",
-                "password": "LXcc12az",
-                "database": "z29769w4_shop",
+                "username": "z29769w4_c",
+                "password": "iV6zkM&r",
+                "database": "z29769w4_c",
                 "synchronize": true,
                 "entities": [review_entity_1.Review, product_entity_1.Product, users_entity_1.User, user_device_entity_1.Device, order_entity_1.Order, order_details_entity_1.OrderDetails]
             }),
@@ -56,6 +57,7 @@ AppModule = __decorate([
             users_module_1.UsersModule,
             auth_module_1.AuthModule,
             order_module_1.OrderModule,
+            chat_module_1.ChatModule,
         ],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService],

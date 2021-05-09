@@ -37,9 +37,11 @@ import { ChartDaysPipe } from './shared/pipes/shop-filters/chart-days.pipe';
 import { SearchPipe } from './shared/pipes/shop-filters/search.pipe';
 import { ValutaPipe } from './shared/pipes/shop-filters/valuta.pipe';
 import { RangePricePipe } from './shared/pipes/shop-filters/range-price.pipe';
-import { CategoryDayPipe } from './shared/pipes/shop-filters/category-day.pipe';
 import { DayNowPipe } from './shared/pipes/day-now.pipe';
 import { DialogBoxAcceptComponent } from './site-pages/order-page/dialog-box-accept/dialog-box-accept.component';
+import { ChatComponent } from './shared/components/chat/chat.component';
+
+/* const config: SocketIoConfig = { url: 'http://localhost:3000', options: {}}; */
 
 @NgModule({
   declarations: [
@@ -70,9 +72,9 @@ import { DialogBoxAcceptComponent } from './site-pages/order-page/dialog-box-acc
     SearchPipe,
     ValutaPipe,
     RangePricePipe,
-    CategoryDayPipe,
     DayNowPipe,
     DialogBoxAcceptComponent,
+    ChatComponent,
   ],
   imports: [
     BrowserModule,

@@ -7,18 +7,18 @@ import { User } from 'src/users/entity/users.entity';
 
 @Injectable()
 export class LocalStrategy extends PassportStrategy(Strategy) {
-    constructor(private authService: AuthService) {
-        super({
-          usernameField: 'login',
-        });
-    }
+  constructor(private authService: AuthService) {
+    super({
+      usernameField: 'login',
+    });
+  }
 
-    async validate(login: string, password: string): Promise<User> {
-        const user = await this.authService.validateUser(login, password);
-        if (!user) {
-          throw new UnauthorizedException('Логин или пароль неверный');
-        }
-        return user;
-      }
+  async validate(login: string, password: string): Promise<User> {
+    const user = await this.authService.validateUser(login, password);
+    if (!user) {
+      throw new UnauthorizedException('Логин или пароль неверный');
+    }
+    return user;
+  }
 
 }

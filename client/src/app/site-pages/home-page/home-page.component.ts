@@ -58,6 +58,21 @@ export class HomePageComponent implements OnInit, AfterViewInit, OnDestroy {
       }
     }
   }
+  configMenuCart: SwiperOptions = {
+    freeMode: true,
+    spaceBetween: 20,
+    slidesPerView: 1,
+    breakpoints: {
+      960: {
+        spaceBetween: 0,
+        slidesPerView: 4,
+      },
+      450: {
+        spaceBetween: 20,
+        slidesPerView: 1,
+      }
+    }
+  }
 
   constructor(
     private productService: ProductService,
@@ -82,20 +97,16 @@ export class HomePageComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   initMenuItems(menu: any, category: string = '', isActiveFirstItem: Boolean = false) {
-
     isActiveFirstItem ? menu[0].classList.add('schedule-days__item_active') : 
     this.today != 0 ? menu[this.today - 1].classList.add('schedule-days__item_active') :  
     menu[6].classList.add('schedule-days__item_active');
 
     for (let menuItem of menu) {
       menuItem.addEventListener('click', () => {
-
         if (menuItem.classList.contains('schedule-days__item_active')) return;
-
         for (let i = 0; i < menu.length; i++) {
           menu[i].classList.remove('schedule-days__item_active');
         }
-
         if (category) {
           let day = menuItem.getAttribute('value');
           this.products$ = this.productService.getByFilters(category, day);

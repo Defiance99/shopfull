@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { Product, ProductOrder } from '../interfaces';
+import { Message, Order, Product, ProductOrder } from '../interfaces';
 import { AuthService } from './auth.service';
 
 @Injectable({
@@ -14,9 +14,9 @@ export class OrderService {
     private http: HttpClient,
   ) { }
 
-  addToCart(product: Product) {
+  addToCart(product: Product): Observable<ProductOrder | ProductOrder[]>  {
     if (this.authService.isAuthenticated()) {
-      return this.http.post('/api/order/addToCart', product);
+      return this.http.post<ProductOrder>('/api/order/addToCart', product);
     } else {
       let productsString = localStorage.getItem('products');
       let products: ProductOrder[] = [];
@@ -32,7 +32,7 @@ export class OrderService {
       }
       products = products.concat([productsOrder]);
       localStorage.setItem('products', JSON.stringify(products));
-      return of(true);
+      return of(products);
     }
   }
 
@@ -40,12 +40,8 @@ export class OrderService {
     return this.http.post<ProductOrder[]>('/api/order/updateMyOrder', products);
   }
 
-  getLocalitems() {
-
-  }
-
-  checkout() {
-    return this.http.get('/api/order/checkout');
+  checkout(): Observable<Order> {
+    return this.http.get<Order>('/api/order/checkout');
   }
 
   updateLocalItems(items: ProductOrder[]) {
@@ -60,12 +56,12 @@ export class OrderService {
     return this.http.get<ProductOrder[]>('/api/order/myCart');
   }
 
-  remove(item: ProductOrder) {
-    return this.http.delete(`/api/order/product/${item.id}`);
+  remove(item: ProductOrder): Observable<Message> {
+    return this.http.delete<Message>(`/api/order/product/${item.id}`);
   }
 
-  removeAll() {
-    return this.http.delete('/api/order/products');
+  removeAll(): Observable<Message> {
+    return this.http.delete<Message>('/api/order/products');
   }
 
 }

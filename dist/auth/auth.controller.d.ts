@@ -4,7 +4,9 @@ import { TokensDto } from './dto/tokens.dto';
 export declare class AuthController {
     private authService;
     constructor(authService: AuthService);
-    signUp(dataSignUp: SignUpDto, req: any): Promise<void>;
+    signUp(dataSignUp: SignUpDto, req: any): Promise<{
+        message: string;
+    }>;
     login(req: any): Promise<{
         access_token: string;
         refresh_token: any;

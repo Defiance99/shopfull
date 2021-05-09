@@ -1,8 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
+import { Observable, of } from 'rxjs';
 import { tap } from 'rxjs/operators';
-import { SignInForm, User } from '../interfaces';
+import { AuthTokens, Message, SignInForm, User } from '../interfaces';
 
 @Injectable({
   providedIn: 'root'
@@ -17,12 +18,12 @@ export class AuthService {
     ) { }
 
 
-  register(userForm: User) {
-    return this.http.post('/api/auth/signUp', userForm);
+  register(userForm: User): Observable<Message> {
+    return this.http.post<Message>('/api/auth/signUp', userForm);
   }
 
-  login(signInForm: SignInForm) {
-    return this.http.post('/api/auth/signIn', signInForm)
+  login(signInForm: SignInForm): Observable<AuthTokens> {
+    return this.http.post<AuthTokens>('/api/auth/signIn', signInForm)
       .pipe(
         tap(
           (tokens: any) => {
@@ -49,22 +50,22 @@ export class AuthService {
     localStorage.removeItem('refresh_token');
   }
 
-  logoutAllDevice() {
-    return this.http.get('/api/auth/logoutAllDevice');
+  logoutAllDevice(): Observable<Message> {
+    return this.http.get<Message>('/api/auth/logoutAllDevice');
   }
 
   isAuthenticated(): boolean {
     return !!this.getToken();
   }
 
-  updateTokens() {
+  updateTokens(): Observable<AuthTokens | boolean> {
     let tokens = {
       /* 'refresh_token': this.cookieService.get('refresh_token'), */
       'access_token': localStorage.getItem('access_token'),
       'refresh_token': localStorage.getItem('refresh_token')
     }
-    if (tokens['refresh_token'] == '') return;
-    return this.http.post('/api/auth/updateTokens', tokens)
+    if (tokens['refresh_token'] == '') return of(false);
+    return this.http.post<AuthTokens>('/api/auth/updateTokens', tokens)
       .pipe(
         tap(
           (tokens: any) => {

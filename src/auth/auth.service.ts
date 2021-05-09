@@ -16,7 +16,7 @@ export class AuthService {
     async validateUser(login: string, password: string): Promise<any> {
         const user = await this.userService.findByLogin(login);
         if (!user) {
-            throw new HttpException('Login or password is wrong', HttpStatus.UNAUTHORIZED);
+            throw new HttpException('Логин или пароль неверен', HttpStatus.UNAUTHORIZED);
         }
         const resultOfCheckingPasswords  = await bcrypt.compareSync(password, user.password);
 
@@ -24,7 +24,7 @@ export class AuthService {
             const {password, ...result} = user;
             return result;
         }else {
-            throw new HttpException('Login or password is wrong', HttpStatus.UNAUTHORIZED);
+            throw new HttpException('Логин или пароль неверен', HttpStatus.UNAUTHORIZED);
         }
     }
 
@@ -36,9 +36,10 @@ export class AuthService {
             const hash = await bcrypt.hashSync(dataUser.password, salt);
             dataUser.password = hash;
 
-            this.userService.create(dataUser, device);
+            await this.userService.create(dataUser, device);
+            return {message: 'Зарегистрированны'};
         }else {
-            throw new HttpException('This login already exist', HttpStatus.CONFLICT)
+            throw new HttpException('Этот логин уже используется', HttpStatus.CONFLICT)
         }
     }
 

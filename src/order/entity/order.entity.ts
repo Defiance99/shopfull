@@ -21,7 +21,7 @@ export class Order {
     @ManyToOne(type => User, user => user.orders)
     user: User
 
-    @OneToMany(type => OrderDetails, ordersDetails => ordersDetails.orders, {cascade: true})
+    @OneToMany(type => OrderDetails, ordersDetails => ordersDetails.orders)
     ordersDetails: OrderDetails[]
 
     /* @ManyToMany(() => OrderDetails, orderDetails => orderDetails.orders)

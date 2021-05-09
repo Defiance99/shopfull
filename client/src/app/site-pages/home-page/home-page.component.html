@@ -59,6 +59,14 @@
     </div>
 
     <div class="product-cards" *ngIf="products$ | async as products; else loader">
+        <!-- <swiper [config]="configMenuCart">
+            <ng-container *ngFor="let product of products; index as i">
+                <ng-template swiperSlide>
+                    <app-product-cart [product]=product></app-product-cart>
+                </ng-template>
+            </ng-container>
+        </swiper> -->
+
         <ng-container *ngFor="let product of products; index as i">
             <app-product-cart [product]=product></app-product-cart>
         </ng-container>
@@ -110,6 +118,14 @@
         <ng-container *ngFor="let product of products; index as i">
             <app-product-cart [product]=product></app-product-cart>
         </ng-container>
+
+        <!-- <swiper [config]="configMenuCart">
+            <ng-container *ngFor="let product of products; index as i">
+                <ng-template swiperSlide>
+                    <app-product-cart [product]=product></app-product-cart>
+                </ng-template>
+            </ng-container>
+        </swiper> -->
     </div>
 
     <ng-template #loader>

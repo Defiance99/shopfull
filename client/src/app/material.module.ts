@@ -11,6 +11,7 @@ import {MatTableModule} from '@angular/material/table';
 import {MatSliderModule} from '@angular/material/slider';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatDialogModule} from '@angular/material/dialog';
+import {DragDropModule} from '@angular/cdk/drag-drop';
 
 @NgModule({
   imports: [
@@ -26,6 +27,7 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatSliderModule,
     MatSidenavModule,
     MatDialogModule,
+    DragDropModule,
   ],
   exports: [
     MatButtonModule, 
@@ -40,6 +42,7 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatSliderModule,
     MatSidenavModule,
     MatDialogModule,
+    DragDropModule,
   ],
 })
 export class MaterialModel { }

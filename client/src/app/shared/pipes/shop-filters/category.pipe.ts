@@ -11,5 +11,4 @@ export class CategoryPipe implements PipeTransform {
       return states.length == 0 ? true : item.category.map(category => states.includes(category)).includes(true);
     })
   }
-
 }

@@ -37,7 +37,7 @@ __decorate([
     __metadata("design:type", users_entity_1.User)
 ], Order.prototype, "user", void 0);
 __decorate([
-    typeorm_1.OneToMany(type => order_details_entity_1.OrderDetails, ordersDetails => ordersDetails.orders, { cascade: true }),
+    typeorm_1.OneToMany(type => order_details_entity_1.OrderDetails, ordersDetails => ordersDetails.orders),
     __metadata("design:type", Array)
 ], Order.prototype, "ordersDetails", void 0);
 Order = __decorate([

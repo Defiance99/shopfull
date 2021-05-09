@@ -38,7 +38,7 @@ export class CatalogPageComponent implements OnInit, OnDestroy, AfterViewInit {
 
   ngOnInit(): void {
 
-    this.products$ = this.productService.getPositions();
+    this.products$ = this.productService.getAll();
     this.querySubscription = this.route.queryParams.subscribe(
       queryParam => {
         if (queryParam['category']) this.categories = [queryParam['category']];

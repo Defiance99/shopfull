@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from "@angular/core";
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { Product } from '../interfaces';
 
 @Injectable({
@@ -8,13 +8,15 @@ import { Product } from '../interfaces';
 })
 export class ProductService {
 
-    private products$!: Observable<Product[]>;
+    catalogProductsCache = new Map();
+    filteredProductsCache = new Map();
+    singleProductsCache = new Map();
 
     constructor(private http: HttpClient) {
 
     }
 
-    create(form: Product, images?: File[]) {
+    create(form: Product, images?: File[]): Observable<Product> {
         const fd = new FormData();
 
         if (images) {
@@ -32,32 +34,46 @@ export class ProductService {
         fd.append('chartDays', JSON.stringify(form.chartDays));
         fd.append('customFields', JSON.stringify(form.customFields));
         
-        return this.http.post('/api/product/uploadMultipleFiles', fd);
+        return this.http.post<Product>('/api/product/uploadMultipleFiles', fd);
     }
 
     getByFilters(category: string = '%', day: string = '%'): Observable<Product[]> {
-        return this.http.get<Product[]>(`/api/product/getByFilters?category=${category}&day=${day}`);
+        const url = `/api/product/getByFilters?category=${category}&day=${day}`;
+        return this.toCache(url, this.filteredProductsCache);
     }
 
     getById(id: string): Observable<Product> {
-        return this.http.get<Product>(`/api/product/getById/${id}`);
+        const url = `/api/product/getById/${id}`;
+        const productsFromCache = this.singleProductsCache.get(url);
+        if (productsFromCache) {
+            return of(productsFromCache)
+        }
+        const response = this.http.get<Product>(url);
+        response.subscribe(position => {
+            this.singleProductsCache.set(url, position);
+        });
+        return response;
     }
 
     getProducts(limit: number = 8): Observable<Product[]> {
         return this.http.get<Product[]>(`/api/product/getProducts?limit=${limit}`);
     }
 
-    getAll() {
-        /* return this.http.get<Product[]>('/api/product/getAll'); */
-        this.setPositions(this.http.get<Product[]>('/api/product/getAll'));
+    getAll(): Observable<Product[]> {
+        const url = '/api/product/getAll';
+        return this.toCache(url, this.catalogProductsCache);
     }
 
-    setPositions(products: Observable<Product[]>) {
-        this.products$ = products;
-    }
-
-    getPositions(): Observable<Product[]> {
-        return this.products$;
+    toCache(url: string, cache: any): Observable<Product[]> {
+        const productsFromCache = cache.get(url);
+        if (productsFromCache) {
+            return of(productsFromCache)
+        }
+        const response = this.http.get<Product[]>(url);
+        response.subscribe(position => {
+            cache.set(url, position);
+        });
+        return response;
     }
 
 }

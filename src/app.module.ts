@@ -17,15 +17,17 @@ import { OrderDetails } from './order/entity/order-details.entity';
 import { OrderModule } from './order/order.module';
 import { ServeStaticModule } from '@nestjs/serve-static';
 import { join } from 'path';
+import { ChatModule } from './chat/chat.module';
+import { ChatGateway } from './chat/chat.gateway';
 
 @Module({
   imports: [TypeOrmModule.forRoot({
       "type": "mysql",
       "host": "z29769w4.beget.tech", //localhost //z29769w4.beget.tech
       "port": 3306,
-      "username": "z29769w4_shop", //root //z29769w4_shop
-      "password": "LXcc12az", //root //LXcc12az
-      "database": "z29769w4_shop", //shopapi //z29769w4_shop
+      "username": "z29769w4_c", //root //z29769w4_c
+      "password": "iV6zkM&r", //root //iV6zkM&r
+      "database": "z29769w4_c", //shopapi //z29769w4_c
       "synchronize": true,
       "entities": [Review, Product, User, Device, Order, OrderDetails]
   }),
@@ -40,6 +42,7 @@ import { join } from 'path';
   UsersModule,
   AuthModule,
   OrderModule,
+  ChatModule,
 ],
   controllers: [AppController],
   providers: [AppService],

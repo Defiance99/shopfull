@@ -55,7 +55,7 @@
                         <li [routerLink]="['/catalog']" [queryParams]="{'category': 'Напитки'}">НАПИТКИ</li>
                     </ul>
                 </div>
-                <div>ПОДПИСКА</div>
+                <div (click)="showChat(true)">ЧАТ</div>
                 <div>ДОСТАВКА</div>
                 <div>ПАРТНЕРАМ</div>
                 <div>КОНТАКТЫ</div>
@@ -84,7 +84,7 @@
                     <li [routerLink]="['/catalog']" [queryParams]="{'category': 'Напитки'}">НАПИТКИ</li>
                 </ul>
             </div>
-            <div>ПОДПИСКА</div>
+            <div (click)="showChat(true)">ЧАТ</div>
             <div>ДОСТАВКА</div>
             <div>ПАРТНЕРАМ</div>
             <div>КОНТАКТЫ</div>
@@ -92,7 +92,13 @@
     </div>
 </section>
 
-
+<app-chat 
+    *ngIf="isConnectedChat" 
+    (isConnectedChat)="showChat($event)" 
+    [ngClass]="{dn: isHiddenChat}"
+    (isHiddenChat)="hiddenChat($event)"
+    >
+</app-chat>
 <router-outlet></router-outlet>
 
 
@@ -102,7 +108,7 @@
         <div class="footer-menu">
             <a>Меню</a>
             <a>Магазин</a>
-            <a>Подписка</a>
+            <a (click)="showChat(true)">Чат</a>
             <a>Доставка</a>
             <a>Партнерам</a>
             <a>Контакты</a>

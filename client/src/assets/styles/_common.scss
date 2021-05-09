@@ -2,6 +2,10 @@
     display: flex;
 }
 
+.align-center {
+    align-items: center;
+}
+
 .dn {
     display: none;
 }
@@ -76,6 +80,10 @@ a {
 
 .text {
 
+}
+
+.bt-gray {
+    border-bottom: 1px #ccc solid;
 }
 
 .text-regular {
@@ -356,4 +364,60 @@ h3.sign-auth-form__title {
 
 .mat-footer-cell .button__remove-all {
     margin-left: 15px;
+}
+
+.close-button {
+    position: relative;
+
+    &:hover {
+        &::after, &::before {
+            background-color: #a5a5a5;
+        }
+    }
+
+    &::after, &::before {
+        content: '';
+        position: absolute;
+        width: 2px;
+        height: 14px;
+        cursor: pointer;
+        background-color: #ccc;
+    }
+    
+    &::after {
+        transform: rotate(45deg);
+    }
+
+    &::before {
+        transform: rotate(135deg);
+    }
+}
+
+.hidden-button {
+    height: 3px;
+    width: 10px;
+    background: #ccc;
+    cursor: pointer;
+}
+
+.button__wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 15px;
+    width: 15px;
+
+    &:hover {
+        cursor: pointer;
+
+        div {
+            background: #a5a5a5;
+
+            &::after, &::before {
+                background-color: #a5a5a5;
+            }
+        }
+    }
+
+    
 }

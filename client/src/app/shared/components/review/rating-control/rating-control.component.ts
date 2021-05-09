@@ -38,7 +38,7 @@ export class RatingControlComponent implements OnInit, ControlValueAccessor {
   }
 
 
-  countStar(star: number) {
+  setRating(star: number) {
     this.rating = star;
     this.onChange(star);
     this.onTouched();

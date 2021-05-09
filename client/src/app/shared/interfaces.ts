@@ -15,10 +15,19 @@ export interface Product {
     quantity: number
 }
 
+export interface CustomFields {
+    nameCustomField: string
+    valueCustomField: string
+}
+
 export interface ProductOrder {
     id?: string
     products: ShortProductOrder
     quantity: number
+}
+
+export interface Order {
+    id: string;
 }
 
 export interface ShortProductOrder {
@@ -54,7 +63,22 @@ export interface CreateReview {
     rating: number
 }
 
-export interface CustomFields {
-    nameCustomField: string
-    valueCustomField: string
+export interface CategoryDay {
+    'category': string
+    'day': string,
+    'limit': number
+}
+
+export interface AuthTokens {
+    refresh_token: string
+    access_token: string
+}
+
+export interface Message {
+    message: string
+}
+
+export interface ChatMessage {
+    'author': string
+    'message': string
 }
