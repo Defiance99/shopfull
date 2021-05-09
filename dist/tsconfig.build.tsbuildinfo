@@ -4291,19 +4291,19 @@
         "signature": "1668d65ac63759b2fc857defd59b98c7d00ce7d2e0c33b4c23582bf1ca2558b2",
         "affectsGlobalScope": false
       },
-      "../src/chat/chat.module.ts": {
-        "version": "bd948fb43640f95016997b25b2ad6e13ed8933724351adb3949ed90d5db4d3e8",
-        "signature": "22ab5f26ff2aa4cf463102b34ea2612bbc72dda2e516552cdd44a23ce806fa74",
-        "affectsGlobalScope": false
-      },
       "../src/app.module.ts": {
-        "version": "f1485d00291589617c8fc713fc409b37f17625c85b33692eb7078b449383f844",
+        "version": "9c025a4a7499662bfe043a8b539ec0f19dcfaf04698d22c988b94f5ce4078410",
         "signature": "9f78b3626b7b799cfce54f8a459a432584054fe4fe823f7a21cc91fb950c4c10",
         "affectsGlobalScope": false
       },
       "../src/main.ts": {
         "version": "c8bb80ea533d327b2449adb336d89d23dcd54afcea403dfe1b339d65e263f95c",
         "signature": "f761c91419d0a89422a0004ef1a92929dd4d2d5e5c16758654d8b0467d1998c6",
+        "affectsGlobalScope": false
+      },
+      "../src/chat/chat.module.ts": {
+        "version": "bd948fb43640f95016997b25b2ad6e13ed8933724351adb3949ed90d5db4d3e8",
+        "signature": "22ab5f26ff2aa4cf463102b34ea2612bbc72dda2e516552cdd44a23ce806fa74",
         "affectsGlobalScope": false
       },
       "../node_modules/@nestjs/common/utils/shared.utils.d.ts": {
@@ -8841,7 +8841,6 @@
         "../src/app.service.ts",
         "../src/auth/auth.module.ts",
         "../src/chat/chat.gateway.ts",
-        "../src/chat/chat.module.ts",
         "../src/middleware/body-json.middleware.ts",
         "../src/order/entity/order-details.entity.ts",
         "../src/order/entity/order.entity.ts",

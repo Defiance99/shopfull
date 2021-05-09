@@ -26,7 +26,7 @@ const order_details_entity_1 = require("./order/entity/order-details.entity");
 const order_module_1 = require("./order/order.module");
 const serve_static_1 = require("@nestjs/serve-static");
 const path_1 = require("path");
-const chat_module_1 = require("./chat/chat.module");
+const chat_gateway_1 = require("./chat/chat.gateway");
 let AppModule = class AppModule {
     configure(consumer) {
         consumer
@@ -57,10 +57,9 @@ AppModule = __decorate([
             users_module_1.UsersModule,
             auth_module_1.AuthModule,
             order_module_1.OrderModule,
-            chat_module_1.ChatModule,
         ],
         controllers: [app_controller_1.AppController],
-        providers: [app_service_1.AppService],
+        providers: [app_service_1.AppService, chat_gateway_1.ChatGateway],
     })
 ], AppModule);
 exports.AppModule = AppModule;

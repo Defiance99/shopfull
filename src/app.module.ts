@@ -17,7 +17,7 @@ import { OrderDetails } from './order/entity/order-details.entity';
 import { OrderModule } from './order/order.module';
 import { ServeStaticModule } from '@nestjs/serve-static';
 import { join } from 'path';
-import { ChatModule } from './chat/chat.module';
+/* import { ChatModule } from './chat/chat.module'; */
 import { ChatGateway } from './chat/chat.gateway';
 
 @Module({
@@ -42,10 +42,10 @@ import { ChatGateway } from './chat/chat.gateway';
   UsersModule,
   AuthModule,
   OrderModule,
-  ChatModule,
+  /* ChatModule, */
 ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService, ChatGateway],
 })
 export class AppModule implements NestModule {
   configure(consumer: MiddlewareConsumer): void {
