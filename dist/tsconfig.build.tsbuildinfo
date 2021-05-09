@@ -4151,16 +4151,6 @@
         "signature": "8f1241f5d9f0d3d72117768b3c974e462840fbd85026fb66685078945404cf2f",
         "affectsGlobalScope": false
       },
-      "../src/app.module.ts": {
-        "version": "3e59b16ae8b0a8348baf1de55bf9fc9979d4b8691b6442f85a6e68c6eb0de106",
-        "signature": "9f78b3626b7b799cfce54f8a459a432584054fe4fe823f7a21cc91fb950c4c10",
-        "affectsGlobalScope": false
-      },
-      "../src/main.ts": {
-        "version": "c8bb80ea533d327b2449adb336d89d23dcd54afcea403dfe1b339d65e263f95c",
-        "signature": "f761c91419d0a89422a0004ef1a92929dd4d2d5e5c16758654d8b0467d1998c6",
-        "affectsGlobalScope": false
-      },
       "../node_modules/@nestjs/websockets/adapters/ws-adapter.d.ts": {
         "version": "7d2eed7cce648593302069d3fabed797a0a83c05f696e9ba92b1a8df2a0cbcf9",
         "signature": "7d2eed7cce648593302069d3fabed797a0a83c05f696e9ba92b1a8df2a0cbcf9",
@@ -4299,6 +4289,16 @@
       "../src/chat/chat.gateway.ts": {
         "version": "61519c3922d476143ede3446b787e31a356b83d4b81ac7462014cd212dc154f4",
         "signature": "1668d65ac63759b2fc857defd59b98c7d00ce7d2e0c33b4c23582bf1ca2558b2",
+        "affectsGlobalScope": false
+      },
+      "../src/app.module.ts": {
+        "version": "9169fe215fa865397a6a511a4dede6b19b05627a374bd62217009b326318614b",
+        "signature": "9f78b3626b7b799cfce54f8a459a432584054fe4fe823f7a21cc91fb950c4c10",
+        "affectsGlobalScope": false
+      },
+      "../src/main.ts": {
+        "version": "c8bb80ea533d327b2449adb336d89d23dcd54afcea403dfe1b339d65e263f95c",
+        "signature": "f761c91419d0a89422a0004ef1a92929dd4d2d5e5c16758654d8b0467d1998c6",
         "affectsGlobalScope": false
       },
       "../node_modules/@nestjs/common/utils/shared.utils.d.ts": {
@@ -8835,6 +8835,7 @@
         "../src/app.controller.ts",
         "../src/app.service.ts",
         "../src/auth/auth.module.ts",
+        "../src/chat/chat.gateway.ts",
         "../src/middleware/body-json.middleware.ts",
         "../src/order/entity/order-details.entity.ts",
         "../src/order/entity/order.entity.ts",
