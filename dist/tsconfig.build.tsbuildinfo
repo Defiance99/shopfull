@@ -4291,8 +4291,13 @@
         "signature": "1668d65ac63759b2fc857defd59b98c7d00ce7d2e0c33b4c23582bf1ca2558b2",
         "affectsGlobalScope": false
       },
+      "../src/chat/chat.module.ts": {
+        "version": "92eda5ea48b9f5c4b3355a3d089e5146af6d032b919756d49026cfbfc7c9bdbd",
+        "signature": "22ab5f26ff2aa4cf463102b34ea2612bbc72dda2e516552cdd44a23ce806fa74",
+        "affectsGlobalScope": false
+      },
       "../src/app.module.ts": {
-        "version": "9169fe215fa865397a6a511a4dede6b19b05627a374bd62217009b326318614b",
+        "version": "d229de414f993dd6c699fb7231ad206dd17fa8206942f82038811877f1b0a1eb",
         "signature": "9f78b3626b7b799cfce54f8a459a432584054fe4fe823f7a21cc91fb950c4c10",
         "affectsGlobalScope": false
       },
@@ -8835,7 +8840,7 @@
         "../src/app.controller.ts",
         "../src/app.service.ts",
         "../src/auth/auth.module.ts",
-        "../src/chat/chat.gateway.ts",
+        "../src/chat/chat.module.ts",
         "../src/middleware/body-json.middleware.ts",
         "../src/order/entity/order-details.entity.ts",
         "../src/order/entity/order.entity.ts",
@@ -8924,6 +8929,10 @@
       "../src/chat/chat.gateway.ts": [
         "../node_modules/@nestjs/websockets/index.d.ts",
         "../node_modules/@types/socket.io/index.d.ts"
+      ],
+      "../src/chat/chat.module.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../src/chat/chat.gateway.ts"
       ],
       "../src/chat/socket-io.adapter.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
