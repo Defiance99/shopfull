@@ -1,5 +1,4 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { AuthService } from '../../services/auth.service';
 import { ProductService } from '../../services/product.service';
 
 @Component({
@@ -9,12 +8,8 @@ import { ProductService } from '../../services/product.service';
 })
 export class MainLayoutComponent implements OnInit, OnDestroy {
 
-  isConnectedChat: boolean = false;
-  isHiddenChat: boolean = false;
-
   constructor(
     private productService: ProductService,
-    private authService: AuthService
   ) { }
 
   ngOnInit(): void {
@@ -22,15 +17,6 @@ export class MainLayoutComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-  }
-
-  showChat(state: boolean) {
-    if (this.isConnectedChat = true) this.isHiddenChat = false;
-    this.isConnectedChat = state;
-  }
-
-  hiddenChat(state: boolean) {
-    this.isHiddenChat = state;
   }
 
 }

@@ -5,100 +5,8 @@
 <!-- Modal Message Close -->
 
 
-<section class="main-nav_Header">
-    <div class="main-nav-container">
-        <div class="custom-burger-menu">
-            <span class="top-line"></span>
-            <span class="middle-line"></span>
-            <span class="bottom-line"></span>
-        </div>
-        <div class="main-nav-title">
-            <div class="left-side-block">
-                <div class="phone-contact">+ 375 (33) 375-07-60</div>
-            </div>
-            <div class="right-side-block">
-                <div class="instagram-logo-container">
-                    <img src="/assets/images/instagram-logo-outside.png" alt="instagram logo" class="instagram-logo-outside">
-                    <img src="/assets/images/instagram-logo-inside.png" alt="instagram logo" class="instagram-logo-inside">
-                    <span class="instagram-logo-dot"></span>
-                </div>
-                <div class="search-logo-container">
-                    <img src="/assets/images/search-logo.png" alt="search logo" class="search-logo"> 
-                </div>
-                <div class="auth-logo-container" routerLink="/admin-panel">
-                    <img src="/assets/images/top-user-logo.png" alt="auth logo" class="auth-logo-top"> 
-                    <img src="/assets/images/bottom-user-logo.png" alt="auth logo" class="auth-logo-bottom"> 
-                </div>
-                <div class="basket-logo-container" routerLink="/order">
-                    <img src="/assets/images/basket-logo.png" alt="search logo" class="basket-logo"> 
-                </div>
-            </div>
-        </div>
+<app-header></app-header>
 
-        <div class="main-nav-menu">
-            <div class="left-side-block" routerLink="/">
-                <img src="/assets/images/Vector.png" alt="brand logo" class="brand-logo"> 
-                <p class="title-text">
-                    НОВАЯ<br> 
-                    СТОЛОВАЯ
-                </p>
-            </div>
-            <div class="right-side-block">
-                <div class="shop-list-block">
-                    <span routerLink="/catalog">МАГАЗИН</span>
-                    <ul class="list-products">
-                        <li [routerLink]="['/catalog']" [queryParams]="{'category': 'Завтрак'}">ЗАВТРАКИ</li>
-                        <li [routerLink]="['/catalog']" [queryParams]="{'category': 'Обед'}">ОБЕДЫ</li>
-                        <li [routerLink]="['/catalog']" [queryParams]="{'category': 'Десерт'}">ДЕСЕРТЫ</li>
-                        <li [routerLink]="['/catalog']" [queryParams]="{'category': 'Хлеб и выпечка'}">ХЛЕБ И ВЫПЕЧКА</li>
-                        <li [routerLink]="['/catalog']" [queryParams]="{'category': 'Соусы и намазки'}">СОУСЫ И НАМАЗКИ</li>
-                        <li [routerLink]="['/catalog']" [queryParams]="{'category': 'Напитки'}">НАПИТКИ</li>
-                    </ul>
-                </div>
-                <div (click)="showChat(true)">ЧАТ</div>
-                <div>ДОСТАВКА</div>
-                <div>ПАРТНЕРАМ</div>
-                <div>КОНТАКТЫ</div>
-            </div>
-        </div>
-        <div class="mobile-nav-menu">
-            <!-- <div class="first-level-menu list-menu-products">
-                <span class="first-level-menu-elem">МЕНЮ</span>
-                <ul class="second-level-menu">
-                    <li>ЗАВТРАКИ</li>
-                    <li>ОБЕДЫ</li>
-                    <li>ДЕСЕРТЫ</li>
-                    <li>ХЛЕБ И ВЫПЕЧКА</li>
-                    <li>СОУСЫ И НАМАЗКИ</li>
-                    <li>НАПИТКИ</li>
-                </ul>
-            </div> -->
-            <div class="first-level-menu shop-list-products">
-                <span class="first-level-menu-elem shop-text-mark">МАГАЗИН</span>
-                <ul class="second-level-menu">
-                    <li [routerLink]="['/catalog']" [queryParams]="{'category': 'Завтрак'}">ЗАВТРАКИ</li>
-                    <li [routerLink]="['/catalog']" [queryParams]="{'category': 'Обед'}">ОБЕДЫ</li>
-                    <li [routerLink]="['/catalog']" [queryParams]="{'category': 'Десерт'}">ДЕСЕРТЫ</li>
-                    <li [routerLink]="['/catalog']" [queryParams]="{'category': 'Хлеб и выпечка'}">ХЛЕБ И ВЫПЕЧКА</li>
-                    <li [routerLink]="['/catalog']" [queryParams]="{'category': 'Соусы и намазки'}">СОУСЫ И НАМАЗКИ</li>
-                    <li [routerLink]="['/catalog']" [queryParams]="{'category': 'Напитки'}">НАПИТКИ</li>
-                </ul>
-            </div>
-            <div (click)="showChat(true)">ЧАТ</div>
-            <div>ДОСТАВКА</div>
-            <div>ПАРТНЕРАМ</div>
-            <div>КОНТАКТЫ</div>
-        </div>
-    </div>
-</section>
-
-<app-chat 
-    *ngIf="isConnectedChat" 
-    (isConnectedChat)="showChat($event)" 
-    [ngClass]="{dn: isHiddenChat}"
-    (isHiddenChat)="hiddenChat($event)"
-    >
-</app-chat>
 <router-outlet></router-outlet>
 
 
@@ -108,7 +16,6 @@
         <div class="footer-menu">
             <a>Меню</a>
             <a>Магазин</a>
-            <a (click)="showChat(true)">Чат</a>
             <a>Доставка</a>
             <a>Партнерам</a>
             <a>Контакты</a>

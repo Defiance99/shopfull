@@ -1,0 +1,26 @@
+// Layout classes
+.container {
+    max-width: $default-width;
+    width: 100%;
+}
+
+
+.showBurgerMenu {
+    width: 235px !important;
+    border: 1px black solid;
+}
+.top-line__Burger-menu {
+    &::after {
+        transform: translateY(12.5px) rotate(45deg);
+    }
+}
+.middle-line__Burger-menu {
+    &::after {
+        opacity: 0;
+    }
+}
+.bottom-line__Burger-menu {
+    &::after {
+        transform: translateY(-12.5px) rotate(-45deg);
+    }
+}

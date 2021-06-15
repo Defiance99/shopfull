@@ -1,0 +1,27 @@
+@import "./theme/style";
+
+@mixin up($breakpoint) {
+    @if map-has-key($map: $grid-breakpoints, $key: $breakpoint) {
+        @media (min-width: map-get($map: $grid-breakpoints, $key: $breakpoint)) {
+            @content;
+        }
+    }
+}
+
+@mixin down($breakpoint) {
+    @if map-has-key($map: $grid-breakpoints, $key: $breakpoint) {
+        @media (max-width: map-get($map: $grid-breakpoints, $key: $breakpoint)) {
+            @content;
+        }
+    }
+}
+
+@mixin only($min-breakpoint, $max-breakpoint) {
+    @if (map-has-key($map: $grid-breakpoints, $key: $min-breakpoint)) 
+    and (map-has-key($map: $grid-breakpoints, $key: $max-breakpoint)) {
+        @media (min-width: map-get($map: $grid-breakpoints, $key: $min-breakpoint)) 
+        and (max-width: map-get($map: $grid-breakpoints, $key: $max-breakpoint)) {
+            @content;
+        }
+    }
+}

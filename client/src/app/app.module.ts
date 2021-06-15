@@ -40,6 +40,7 @@ import { RangePricePipe } from './shared/pipes/shop-filters/range-price.pipe';
 import { DayNowPipe } from './shared/pipes/day-now.pipe';
 import { DialogBoxAcceptComponent } from './site-pages/order-page/dialog-box-accept/dialog-box-accept.component';
 import { ChatComponent } from './shared/components/chat/chat.component';
+import { HeaderComponent } from './shared/layouts/main-layout/header/header.component';
 
 /* const config: SocketIoConfig = { url: 'http://localhost:3000', options: {}}; */
 
@@ -75,6 +76,7 @@ import { ChatComponent } from './shared/components/chat/chat.component';
     DayNowPipe,
     DialogBoxAcceptComponent,
     ChatComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,6 @@
-.main-nav_Header {
+@import "mixin";
+
+header {
     display: flex;
     justify-content: center;
     width: 100%;
@@ -50,7 +52,7 @@
                     }
                 }
                 .search-logo-container, .auth-logo-container, .basket-logo-container {
-                    @extend %efffect-header-items-on-hover;
+                    /* @extend %efffect-header-items-on-hover; */
                     transition: 250ms;
                 }
                 div:nth-child(n+2):hover {
@@ -153,7 +155,7 @@
                     height: 100%;
                     
                     .list-products {
-                        @extend %list-products;
+                        /* @extend %list-products; */
                         right: -65px;
                     }
                 }
@@ -166,7 +168,7 @@
                     height: 100%;
 
                     .list-products {
-                        @extend %list-products;
+                       /*  @extend %list-products; */
                         right: -55px;
                     }
                 }
@@ -226,23 +228,6 @@
             transition: all 200ms ease;
         }
     }
-
-    /* .custom-burger-menu:hover {
-        cursor: pointer;
-    }
-    .custom-burger-menu:hover .top-line::after {
-        transform: translateY(12.5px) rotate(45deg);
-    }
-    .custom-burger-menu:hover .middle-line::after {
-        opacity: 0;
-    }
-    .custom-burger-menu:hover .bottom-line::after {
-        transform: translateY(-12.5px) rotate(-45deg);
-    } */
-
-    /* .custom-burger-menu:hover .mobile-nav-menu {
-            width: 238px !important;
-    } */
 
     .mobile-nav-menu {
         display: none;

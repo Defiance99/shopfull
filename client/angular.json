@@ -35,6 +35,11 @@
               "src/styles.scss",
               "src/assets/styles/index.scss"
             ],
+            "stylePreprocessorOptions": { 
+              "includePaths": [
+                "src/app/shared"
+              ]
+            },
             "scripts": [
               "src/assets/scripts/modalsWindow.js",
               "src/assets/scripts/burgerMenu.js",
@@ -102,6 +107,11 @@
             "styles": [
               "src/styles.scss"
             ],
+            "stylePreprocessorOptions": { 
+              "includePaths": [
+                "src/app/shared"
+              ]
+            },
             "scripts": []
           }
         },
